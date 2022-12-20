@@ -1,0 +1,16 @@
+attrdict
+setproctitle
+transformers
+tensorboardX
+tensorflow==2.2.0
+nltk
+datasets
+torchmetrics
+sentence_transformers
+jsonlines
+spacy
+wget
+
+# pip install sacrebleu sacrebleu
+# pip install rouge_score==0.0.4
+# pip install torch==1.8.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
