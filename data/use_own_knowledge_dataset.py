@@ -5,6 +5,7 @@ from functools import partial
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from typing import List, Optional
+from setproctitle import setproctitle
 
 import torch
 from datasets import Features, Sequence, Value, load_dataset
@@ -56,7 +57,7 @@ def main(
     processing_args: "ProcessingArguments",
     index_hnsw_args: "IndexHnswArguments",
 ):
-
+    setproctitle("chaos_kindex_test")
     ######################################
     logger.info("Step 1 - Create the dataset")
     ######################################
@@ -93,7 +94,7 @@ def main(
     )
 
     # And finally save your dataset
-    passages_path = os.path.join(rag_example_args.output_dir, "total_knowledge_dataset_dataset")
+    passages_path = os.path.join(rag_example_args.output_dir, "knowledge_dataset")
     dataset.save_to_disk(passages_path)
     # from datasets import load_from_disk
     # dataset = load_from_disk(passages_path)  # to reload the dataset
@@ -107,7 +108,7 @@ def main(
     dataset.add_faiss_index("embeddings", custom_index=index)
 
     # And save the index
-    index_path = os.path.join(rag_example_args.output_dir, "total_knowledge_dataset_hnsw_index.faiss")
+    index_path = os.path.join(rag_example_args.output_dir, "knowledge_dataset_hnsw_index.faiss")
     dataset.get_index("embeddings").save(index_path)
 
     ######################################
@@ -140,7 +141,7 @@ def main(
 @dataclass
 class RagExampleArguments:
     csv_path: str = field(
-        default=str("persona_chat.csv"), #change input path
+        default=str("knowledge_doc.csv"), #change input path
         metadata={"help": "Path to a tab-separated csv file with columns 'title' and 'text'"},
     )
     question: Optional[str] = field(
@@ -158,7 +159,7 @@ class RagExampleArguments:
         },
     )
     output_dir: Optional[str] = field(
-        default=str("persona_chat/"), #change output path
+        default=str("./knowledge_index"), #change output path
         metadata={"help": "Path to a directory where the dataset passages and the index will be saved"},
     )
 

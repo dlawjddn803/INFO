@@ -1,0 +1,1 @@
+python use_own_knowledge_dataset.py --csv_path=knowledge_doc.csv --output_dir=./knowledge_index

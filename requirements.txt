@@ -1,6 +1,6 @@
 attrdict
 setproctitle
-transformers
+transformers==4.17.0
 tensorboardX
 tensorflow==2.2.0
 nltk
@@ -10,7 +10,8 @@ jsonlines
 spacy
 wget
 rouge-score==0.0.4
-datasets==1.11.0
-# pip install sacrebleu sacrebleu
+datasets==2.0.0
+faiss-cpu
+# pip install sacrebleu
 # pip install rouge_score==0.0.4
 # pip install torch==1.8.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
