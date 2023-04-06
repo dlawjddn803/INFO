@@ -1,5 +1,5 @@
 # INFO: Intellectual and Friendly Dialogue Agents grounding
-Source codes for the paper "You Truly Understand What I Need: Intellectual and Friendly Dialogue Agents grounding Knowledge and Persona", accepted at EMNLP 2022 Findings.
+Source codes for the paper "[You Truly Understand What I Need: Intellectual and Friendly Dialogue Agents grounding Knowledge and Persona](https://aclanthology.org/2022.findings-emnlp.75.pdf)", accepted at EMNLP 2022 Findings.
 
 
 
